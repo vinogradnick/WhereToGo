@@ -1,0 +1,30 @@
+{%  extends 'base.html' %}
+
+{% block Tests %}
+    {% include 'componetns/nav.html' %}
+{% load staticfiles %}
+    <section class="profession grey lighten-3">
+	<div id="index-banner" class="wrapper">
+		<div class="section no-pad-bot">
+			<h1 class="center black-text display-1 lighten-3 ">Тесты</h1> </div>
+		<div class="row">
+            <div class="col m4 s12">
+                <div class="card hoverable">
+            <div class="card-image">
+              <img src="{% static 'media/background2.jpg' %}">
+              <span class="card-title">Определение профессии</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+<a href="{% url 'TestsDetailView' id_test=1 %}" class="waves-effect waves-light btn  cyan">Выбрать тест</a>
+            </div>
+          </div>
+            </div>
+        </div>
+        </div>
+	</div>
+</section>
+{% endblock %}

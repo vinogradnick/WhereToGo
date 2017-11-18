@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Куда Дальше</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+     <link href="{%  static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+{% block Index %}
+{% endblock %}
+{% block University %}
+{% endblock %}
+{% block Profession %}
+{% endblock %}
+{% block Tests %}
+{% endblock %}
+{% block ProfessionDetail %}
+{% endblock %}
+{% block UniversityDetail %}
+{% endblock %}
+{% block StudyProgram %}
+{% endblock %}
+{% block StudyProgramDetail %}
+{% endblock %}
+{% block CalcResult %}
+
+{% endblock %}
+{% block Calc %}
+{% endblock %}
+{% block Parents %}
+    
+{% block About %}
+{% endblock %}
+{% endblock %}
+{% block TestsDetail %}
+
+{% endblock %}
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+    <script src="{%  static 'js/materialize.min.js' %} "></script>
+    <script src="{% static 'js/init.js' %}"></script>
+<script>
+!function(t,i,e,a){var s=function(t,i){arguments.length&&this.init(t,i)};s.CANVAS_NAMES=["back","fill","front"];var n,o=s;for(n=e.createElement("canvas"),n.getContext?(n=n.getContext("2d"),n=(i.devicePixelRatio||1)/(n.webkitBackingStorePixelRatio||n.mozBackingStorePixelRatio||n.msBackingStorePixelRatio||n.oBackingStorePixelRatio||n.backingStorePixelRatio||1)):n=1,o.PIXEL_RATIO=n,o=["ms","moz","webkit","o"],n=0;n<o.length&&!i.requestAnimationFrame;n++)i.requestAnimationFrame=i[o[n]+"RequestAnimationFrame"],i.cancelAnimationFrame=i[o[n]+"CancelAnimationFrame"]||i[o[n]+"CancelRequestAnimationFrame"];i.requestAnimationFrame||(i.requestAnimationFrame=function(t){return i.setTimeout(function(){t()},16)}),i.cancelAnimationFrame||(i.cancelAnimationFrame=function(t){clearTimeout(t)});var r=function(t){arguments.length&&this.init(t)};r.prototype={attributes:{onLoop:null,afterStop:null,afterStopRequest:null,params:{},owner:null},init:function(i){this.options=t.extend({},this.attributes,i),this.animationHandle=null,this.loops=0,this.stopRequested=!1},start:function(){var t=this;this.animationHandle=i.requestAnimationFrame(function(){t.options.onLoop.apply(t.options.owner,[t._getThreadInfo()])&&t._loop()})},_getThreadInfo:function(){return{loops:++this.loops,params:this.options.params,stopRequested:this.stopped}},_kill:function(){this.animationHandle&&i.cancelAnimationFrame(this.animationHandle),t.isFunction(this.options.afterStop)&&this.options.afterStop.call(this.options.owner),t.isFunction(this.options.afterStopRequest)&&this.options.afterStopRequest.call(this.options.owner)},_loop:function(){var t=this;this.animationHandle=i.requestAnimationFrame(function(){t.options.onLoop.apply(t.options.owner,[t._getThreadInfo()])?t._loop():t._kill()})},stop:function(t){this.stopped=!0,this.options.afterStopRequest=t}},s.prototype={defaults:{initialValue:0,maxValue:100,label:"",labelClassName:"text-label",title:"",titleClassName:"text-title",dates:"",datesClassName:"text-dates",percent:!1,decimals:0,digitClassName:"digit-label",format:null,duration:4e3,fillColor:"#eeeeee",wrapperClassName:"circular-stat",outerThickness:8,fillThickness:10},init:function(i,e){return this.element=t(i),this.options=t.extend({},this.defaults,e,this.element.data()),this.attributes={},this.labels={},this.canvases={},this.activeAnimationThread=null,this._parseOptions(),(this.canvases=this._build())&&(this._drawBackside(this.canvases.back),this._drawFrontside(this.canvases.front),this.labels=this._attachLabels(),this._updateVal(0),this.animate(this.options.initialValue,!1)),this},_parseOptions:function(){var i=Math.max(this.element.width(),this.element.height())/2,e=this.options.outerThickness;this.attributes=t.extend({},this.attributes,{currentValue:0,radius:{back:i,fill:i-e,front:i-e-this.options.fillThickness}})},_createCanvas:function(t,i){if(0===t||0===i)return console.log("Invalid canvas dimensions"),!1;var a=e.createElement("canvas");if(a.width=t*s.PIXEL_RATIO,a.height=i*s.PIXEL_RATIO,1<s.PIXEL_RATIO&&(a.style.width=t+"px",a.style.height=i+"px"),!a.getContext){if("undefined"==typeof G_vmlCanvasManager)return console.log("Your browser does not support HTML5 Canvas, or excanvas is missing on IE"),!1;G_vmlCanvasManager.initElement(a)}return a},_attachLabels:function(){var i=t("<span></span>").addClass(this.options.digitClassName),e=t("<span></span>").addClass(this.options.labelClassName).text(this.options.label),a=t("<span></span>").addClass(this.options.titleClassName).text(this.options.title),s=t("<span></span>").addClass(this.options.datesClassName).text(this.options.dates);return this.element.append([i,e,a,s]),{digit:i,text:e,text:a,text:s}},_build:function(){for(var i,e={},a=2*this.attributes.radius.back,n=0;n<s.CANVAS_NAMES.length;++n){if(!(i=this._createCanvas(a,a)))return!1;i.style.position="absolute",i.style.top=0,i.style.left=0,i.className=s.CANVAS_NAMES[n],e[s.CANVAS_NAMES[n]]=i}return this.element.addClass(this.options.wrapperClassName).append(t.map(e,function(t){return t})),e},_drawBackside:function(t){var i=this.attributes.radius.back,e=this.attributes.radius.fill,t=t.getContext("2d"),a=t.createLinearGradient(0,0,0,2*i);a.addColorStop(0,"#d5d5d5"),a.addColorStop(1,"#ffffff"),1<s.PIXEL_RATIO&&t.scale(s.PIXEL_RATIO,s.PIXEL_RATIO),this._drawCircle(t,i,i,i),t.fillStyle=a,t.fill(),this._drawCircle(t,i,i,e),t.fillStyle="#eeeeee",t.fill()},_drawFrontside:function(t){var i=this.attributes.radius.back,e=this.attributes.radius.front,t=t.getContext("2d");1<s.PIXEL_RATIO&&t.scale(s.PIXEL_RATIO,s.PIXEL_RATIO),this._drawCircle(t,i,i,e),t.shadowColor="rgba(0, 0, 0, 0.3)",t.shadowBlur=3,t.shadowOffsetY=1,t.fillStyle="#ffffff",t.fill()},_drawCircle:function(t,i,e,a){t.beginPath(),t.arc(i,e,a,0,2*Math.PI,!1),t.closePath()},_updateVal:function(i,e,a){t.isNumeric(i)&&t.isNumeric(e)&&t.isNumeric(a)?(a=(a-e)*i,i=Math.max(0,Math.min(e+100*a/this.options.maxValue,100)),e=Math.max(0,Math.min(e+a,this.options.maxValue))):(i=Math.min(this.attributes.currentValue/this.options.maxValue,100),e=Math.min(this.attributes.currentValue,this.options.maxValue)),this.labels.digit[0].innerHTML=(t.isFunction(this.options.format)?this.options.format:function(t,i,e){return this.options.percent?t.toFixed(this.options.decimals)+"%":i.toFixed(this.options.decimals)+"/"+e.toFixed(this.options.decimals)}).apply(this,[i,e,this.options.maxValue])},_redraw:function(){var t=this.canvases.fill,i=t.getContext("2d"),e=this.attributes.radius.back,a=this.attributes.radius.fill,n=2*(this.attributes.currentValue/this.options.maxValue)*Math.PI;i.fillStyle=this.options.fillColor,i.clearRect(0,0,t.width,t.height),0!==n&&(i.save(),1<s.PIXEL_RATIO&&i.scale(s.PIXEL_RATIO,s.PIXEL_RATIO),i.translate(e,e),i.rotate(-Math.PI/2),i.beginPath(),i.arc(0,0,a,0,n,!1),i.lineTo(0,0),i.closePath(),i.fill(),i.restore()),this._updateVal()},animate:function(i,e){function a(t){1===t.loops&&(o=(new Date).getTime(),l=2*(i/this.options.maxValue)*Math.PI,u=2*(this.attributes.currentValue/this.options.maxValue)*Math.PI);var e=Math.min(((new Date).getTime()-o)/this.options.duration,1),a=u+(l-u)*e;return p.clearRect(0,0,c.width,c.height),0!==a&&(p.save(),1<s.PIXEL_RATIO&&p.scale(s.PIXEL_RATIO,s.PIXEL_RATIO),p.translate(d,d),p.rotate(-Math.PI/2),p.beginPath(),p.arc(0,0,m,0,a,!1),p.lineTo(0,0),p.closePath(),p.fill(),p.restore()),h._updateVal(e,h.attributes.currentValue,i),t.stopRequested||e>=1?(h.attributes.currentValue+=(i-h.attributes.currentValue)*e,!1):!0}function n(i){t(this).queue("circular",function(i){(this.activeAnimationThread=new r({onLoop:function(){return a.apply(this,arguments)},afterStop:function(){i(),0===t(this).queue("circular").length&&(this.activeAnimationThread=null)},owner:this})).start()}),i&&t(this).dequeue("circular")}if(t.isNumeric(i)&&i>=0&&i<=this.options.maxValue){var o,l,u,h=this,c=this.canvases.fill,p=c.getContext("2d"),d=this.attributes.radius.back,m=this.attributes.radius.fill;p.fillStyle=this.options.fillColor,!e&&this.activeAnimationThread?(t(this).clearQueue("circular"),this.activeAnimationThread.stop(function(){n.apply(this,[!0])})):n.apply(this,[!this.activeAnimationThread])}},option:function(i,e){if(0===arguments.length)return t.extend({},this.options);if("string"==typeof i){if(e===a)return this.options[i];switch(i){case"label":this.options[i]=e,this.labels.text.html(e);break;case"maxValue":this.options.percent||(this.attributes.currentValue=Math.max(Math.min(this.attributes.currentValue,e),0),this.options[i]=e,this._redraw());break;case"percent":e&&(this.options.maxValue=100,this.attributes.currentValue=Math.max(Math.min(this.attributes.currentValue,100),0));case"format":case"decimals":case"fillColor":case"duration":this.options[i]=e,this._redraw()}}return this}},s.defaults=s.prototype.defaults,t.fn.CircularStat=function(i){var e="string"==typeof i,n=Array.prototype.slice.call(arguments,1),o=this;return e&&"_"===i.charAt(0)?o:(this.each(e?function(){var e=t.data(this,"circular-stat"),s=e&&t.isFunction(e[i])?e[i].apply(e,n):e;return s!==e&&s!==a?(o=s,!1):void 0}:function(){t.data(this,"circular-stat")||t.data(this,"circular-stat",new s(this,i))}),o)},t(function(){t('[data-provide="circular"]').each(function(){var i=t(this);i.CircularStat(i.data())})})}(jQuery,window,document);
+    </script>
+</body>
+
+</html>

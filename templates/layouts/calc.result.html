@@ -1,0 +1,122 @@
+{% extends 'base.html' %} {% block CalcResult %} {% include 'componetns/nav.html' %}
+<section class="university grey lighten-3">
+	<div id="index-banner" class="wrapper">
+		<div class="section no-pad-bot">
+			<h1 class="center black-text lighten-3 display-1">Программы обучения</h1> </div>
+		<div class="container">
+            <table>
+        <thead>
+          <tr>
+              <th>Предмет</th>
+              <th>Балл</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% if biology != 0  %}
+         <tr>
+            <td>Биология</td>
+            <td id="biology">{{ biology }}</td>
+          </tr>
+
+        {% endif %}
+         {% if english != 0 %}
+         <tr>
+            <td>Английский</td>
+            <td id="english">{{ english }}</td>
+          </tr>
+
+        {% endif %}
+        {% if history != 0  %}
+         <tr>
+            <td>История</td>
+            <td id="history">{{ history }}</td>
+          </tr>
+        {% endif %}
+        {% if matematics != 0 %}
+         <tr>
+            <td>Математика</td>
+            <td id="matematics">{{ matematics }}</td>
+          </tr>
+
+            {% else %}
+            {{ matematics }}
+
+        {% endif %}
+        {% if russian != 0  %}
+         <tr>
+            <td>Русский язык</td>
+            <td id="russian">{{ russian }}</td>
+          </tr>
+
+        {% endif %}
+        {% if  chemistry != 0  %}
+         <tr>
+            <td>Химия</td>
+            <td id="chemistry">{{ chemistry }}</td>
+          </tr>
+
+        {% endif %}
+        {% if geography != 0  %}
+         <tr>
+            <td>География</td>
+            <td id="geography">{{ geography }}</td>
+          </tr>
+
+        {% endif %}
+
+
+        {% if literature != 0  %}
+         <tr>
+            <td>Литература</td>
+            <td id="literature">{{ literature }}</td>
+          </tr>
+
+        {% endif %}
+
+
+        {% if society != 0  %}
+         <tr>
+            <td>Обществознание</td>
+            <td id="society">{{ society }}</td>
+          </tr>
+
+        {% endif %}
+
+
+        {% if physics != 0  %}
+         <tr>
+            <td>Физика</td>
+            <td id="physic">{{ physics }}</td>
+          </tr>
+
+        {% endif %}
+        </tbody>
+      </table>
+			<h4 class="display-2  black-text">Ваша сумма баллов {{ summary }}</h4>
+
+        </div>
+		<div class="row"> {% load staticfiles %}
+			<div class="col s12"> {% for study in program %}
+				<a href="/studyprogram/detail/{{ study.id }}/" class="black-text">
+					<div class="card horizontal">
+						<div class="card-image"> <img src="{% static 'media' %}/{{ study.image }} "> </div>
+						<div class="card-stacked">
+							<div class="card-content">
+								<h4 class="display-4">{{ study.name }}</h4>
+								<p>{{ study.about }}</p>
+
+								</div>
+                            <div class="hidden">
+                                {{ study.biology }}
+                                {{ study.russian }}
+                            </div>
+							</div>
+						</div>
+
+				</a> {% endfor %} </div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

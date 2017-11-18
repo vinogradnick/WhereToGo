@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block Profession %} {% include 'componetns/nav.html' %}
+<section class="profession grey lighten-3">
+    <div id="index-banner" class="wrapper">
+        <div class="section no-pad-bot">
+            <h1 class="center black-text display-1">Профессии</h1>
+        </div>
+        {% load staticfiles %}
+        <div class="container">
+            <div class="row"> {% for categ in category %}
+                <div class="col s12">
+                    <h3 class="black-text display-2">
+                        {{ categ.name }}
+                    </h3>
+                    <p class="black-text ">{{ categ.about }}</p>
+                    <div class="carousel"> {% for prof in profession %} {% if categ.prof_key == prof.cat_key %}
+                        <a class="carousel-item" href="/profession/detail/{{ prof.id }}"><img class="profession-image" src="{% static 'media' %}/{{prof.image}}">
+                            <p>{{ prof.name }}</p>
+                        </a> {% endif %} {% endfor %} </div>
+                </div> {% endfor %} </div>
+        </div>
+    </div>
+</section> {% endblock %}

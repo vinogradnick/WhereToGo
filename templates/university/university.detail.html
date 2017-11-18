@@ -1,0 +1,130 @@
+{% extends 'base.html' %} {% block UniversityDetail %} {% load staticfiles %}
+<section class="index" style="background: rgba(0, 0, 0, 0.72) url('{% static 'media' %}/{{ university.image }}');">
+   <div id=" index-banner " class="parallax-container ">
+      {% include 'componetns/nav.detail.html' with page=university.name only %}
+      <br>
+      <div class="section no-pad-bot ">
+         <div class="container ">
+            <br>
+            <br>
+            <h1 class="header center white-text ">{{ university.name }}</h1>
+            <br>
+            <br>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="nav-color">
+   <div class="row ">
+      <div class="col s12 ">
+         <ul class="tabs nav-color z-depth-1">
+            <li class="tab col s4"><a class="white-text" href="#studyprogram">Образовательные программы</a></li>
+            <li class="tab col s4"><a class="white-text" class="active" href="#balls">Минимальные баллы</a></li>
+            <li class="tab col s4"><a class="white-text" href="#info">Информация о вузе</a></li>
+         </ul>
+      </div>
+      <div id="studyprogram" class="col s12 grey lighten-3 ">
+         <div class="row ">
+            <div class="col s12 ">
+               <h4 class="center display-3 black-text ">Образовательные программы</h4>
+               <br>
+               <br>
+            </div>
+            <div class="col s12 ">
+               <ul class="tabs grey lighten-3">
+                  <li class="tab col s4"><a class="black-text" href="#bakalvr">Балакалавриат</a></li>
+                  <li class="tab col s4"><a class="active black-text" href="#specialitet">Специалитет</a></li>
+                  <li class="tab col s4 "><a class="black-text" href="#magister">Магистратура</a></li>
+               </ul>
+            </div>
+            <div id="bakalvr" class="col s12">
+                <ul class="collapsible hoverable popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body">
+         <div class="row">
+
+             <div class="col s12 m4"><div class="card">
+            <div class="card-image">
+              <img src="{%  static 'media/background1.jpg' %}">
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+             <p>Форма обучения:</p>
+                <hr>
+                <p>Предметы вступительных испытаний</p>
+                <hr>
+                <p>Минимальный балл для особого права</p>
+            </div>
+            <div class="card-action">
+              <a href="">This is a link</a>
+            </div>
+          </div></div>
+
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+            </div>
+            <div id="specialitet" class="col s12 ">Test 2</div>
+            <div id="magister" class="col s12">Test 3</div>
+         </div>
+      </div>
+      <div id="balls" class="col s12 grey lighten-3 ">
+         <div class="container ">
+            <div class="row ">
+               <div class="col s12 ">
+                  <h4 class="center display-4 white-text">Минимальные баллы</h4>
+                  <br>
+                  <br>
+                  <table class="striped ">
+                     <thead>
+                        <tr>
+                           <th>Предмет</th>
+                           <th>Баллы на бюджет</th>
+                           <th>Баллы на контракт</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Alvin</td>
+                           <td>Eclair</td>
+                           <td>$0.87</td>
+                        </tr>
+                        <tr>
+                           <td>Alan</td>
+                           <td>Jellybean</td>
+                           <td>$3.76</td>
+                        </tr>
+                        <tr>
+                           <td>Jonathan</td>
+                           <td>Lollipop</td>
+                           <td>$7.00</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="info" class="col s12 grey lighten-3 ">
+         <div class="row ">
+            <div class="col s12 ">
+               <h4 class="display-3 center ">Информация о вузе</h4>
+            </div>
+            <div class="col s12 ">
+               <p class="left ">В 2013 году НИУ ВШЭ запустил новый проект — «Университет, открытый городу». Летом на площадке кинотеатра «Пионер» в Парке Горького в Москве учёные университета начали впервые проводить публичные лекции. Их слушателями стали не студенты и не коллеги-учёные, а все посетители парка, которым это показалось интересным.[27]</p>
+               <p class="left ">В 2013 году НИУ ВШЭ запустил новый проект — «Университет, открытый городу». Летом на площадке кинотеатра «Пионер» в Парке Горького в Москве учёные университета начали впервые проводить публичные лекции. Их слушателями стали не студенты и не коллеги-учёные, а все посетители парка, которым это показалось интересным.[27]</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{% endblock %}

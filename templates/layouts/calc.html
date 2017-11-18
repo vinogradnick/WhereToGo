@@ -1,0 +1,239 @@
+{% extends 'base.html' %} {% block Calc %} {% include 'componetns/nav.html' %}
+<section class=" grey lighten-3">
+	<div id="index-banner" class="wrapper">
+		<div class="section no-pad-bot">
+			<h1 class="center display-1 black-text lighten-3">Калькулятор ЕГЭ</h1> </div>
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="card">
+						<div class="card-tabs">
+							<ul class="tabs tabs-fixed-width ">
+								<li class="tab col m6 s12"><a href="#test4">По результатам Экзаменов</a></li>
+								<li class="tab col m6 s12"><a class="active" href="#test5">По предметам</a></li>
+							</ul>
+						</div>
+						<div class="card-content grey lighten-4">
+							<div id="test4">
+								<div class="row">
+                                    <form name="subject" action="/calc/result/" method="get" onsubmit="validate()">
+									<div class="col m6 s12">
+										<div class="row">
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Биология:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="biology" name="biology" type="number" class="validate">
+													<label for="biology" data-error="wrong" data-success="left">Биология</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Иностранный язык:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="english" name="english" type="number" class="validate">
+													<label for="english" data-error="wrong" data-success="left">Иностранный язык</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">История:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="history" name="history" type="number"  class="validate">
+													<label for="history" data-error="wrong" data-success="left">История</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Математика:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="matematic" name="matematic" type="number" class="validate" required>
+													<label for="matematic" data-error="wrong" data-success="left">Математика</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Русский язык:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="russian" name="russian" type="number" class="validate" required>
+													<label for="russian" data-error="wrong" data-success="left">Русский язык</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Химия:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="chemistry" name="chemistry" type="number" class="validate">
+													<label for="chemistry" data-error="wrong" data-success="left">Химия</label>
+												</div></div>
+
+											</div>
+										</div>
+									</div>
+									<div class="col m6 s12">
+										<div class="row">
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">География:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="geografy" name="geografy" type="number" class="validate">
+													<label for="geografy" data-error="wrong" data-success="left">География</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Информатика и ИКТ:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="informatic" name="informatic" type="number" class="validate">
+													<label for="informatic" data-error="wrong" data-success="left">Информатика и ИКТ</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Литература:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="literature" name="literature" type="number" class="validate">
+													<label for="literature" data-error="wrong" data-success="left">Литература</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Обществознание:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="society"  name="society" type="number" class="validate">
+													<label for="society" data-error="wrong" data-success="left">Обществознание</label>
+												</div></div>
+
+											</div>
+											<div class="col s12">
+                                                <div class="valign-wrapper row">
+                                                    <div class="col s12 m3"> <h4 class="display-5">Физика:</h4></div>
+                                                    <div class="input-field col s12 m6">
+													<input id="physic" name="physic" type="number" class="validate">
+													<label for="physic" data-error="wrong" data-success="left">Физика</label>
+												</div></div>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="col s12">
+										<div class="container" align="center">
+											<button type="submit" class="waves-effect waves-light btn-large center">Найти</button>
+										</div>
+									</div>
+                                        <script>
+                                            function validate() {
+                                                "" === document.forms.subject.biology.value && (document.forms.subject.biology.value = 0), "" === document.forms.subject.english.value && (document.forms.subject.english.value = 0), "" === document.forms.subject.history.value && (document.forms.subject.history.value = 0), "" === document.forms.subject.chemistry.value && (document.forms.subject.chemistry.value = 0), "" === document.forms.subject.geografy.value && (document.forms.subject.geografy.value = 0), "" === document.forms.subject.informatic.value && (document.forms.subject.informatic.value = 0), "" === document.forms.subject.literature.value && (document.forms.subject.literature.value = 0), "" === document.forms.subject.society.value && (document.forms.subject.society.value = 0), "" === document.forms.subject.physic.value && (document.forms.subject.physic.value = 0)
+                                            }
+                                        </script>
+{#                                        <script>#}
+{#                                            function  validate() {#}
+{#                                                if (document.forms["subject"]["biology"].value===''){#}
+{#                                                    document.forms["subject"]["biology"].value =0;#}
+{#                                                }#}
+{#                                                 if (document.forms["subject"]["english"].value===''){#}
+{#                                                    document.forms["subject"]["english"].value =0;#}
+{#                                                }#}
+{#                                                 if (document.forms["subject"]["history"].value===''){#}
+{#                                                    document.forms["subject"]["history"].value =0;#}
+{#                                                }#}
+{#                                                 if (document.forms["subject"]["chemistry"].value===''){#}
+{#                                                    document.forms["subject"]["chemistry"].value =0;#}
+{#                                                } if (document.forms["subject"]["geografy"].value===''){#}
+{#                                                    document.forms["subject"]["geografy"].value =0;#}
+{#                                                } if (document.forms["subject"]["informatic"].value===''){#}
+{#                                                    document.forms["subject"]["informatic"].value =0;#}
+{#                                                } if (document.forms["subject"]["literature"].value===''){#}
+{#                                                    document.forms["subject"]["literature"].value =0;#}
+{#                                                } if (document.forms["subject"]["society"].value===''){#}
+{#                                                    document.forms["subject"]["society"].value =0;#}
+{#                                                } if (document.forms["subject"]["physic"].value===''){#}
+{#                                                    document.forms["subject"]["physic"].value =0;#}
+{#                                                }#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#                                                #}
+{#                                            }#}
+{#                                        </script>#}
+                                        </form>
+								</div>
+							</div>
+							<div id="test5">
+								<form action="#">
+									<div class="row">
+										<div class="col s12 m6">
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Физика</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Биология</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">География</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Иностранный язык</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Информатика и ИКТ</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Литература</label>
+											</p>
+										</div>
+										<div class="col s12 m6">
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Математика</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Обществознание</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Русский язык</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">Химия</label>
+											</p>
+											<p class=" black-text ">
+												<input type="checkbox" id="test6" checked="checked" />
+												<label for="test6">История</label>
+											</p>
+										</div>
+										<div class="col s12">
+											<div class="container" align="center">
+												<button class="waves-effect waves-light btn-large center">Найти</button>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> {% endblock %}

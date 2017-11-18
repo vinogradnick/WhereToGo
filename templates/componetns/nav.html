@@ -1,0 +1,17 @@
+{% block Nav %} {% load staticfiles %}
+<nav class="nav-color" role="navigation">
+	<div class="nav-wrapper z-depth-2">
+        <a id="logo-container" href="#" class="brand-logo"><img src="{%  static 'media/logo.svg' %}"  width="40">КудаДальше</a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="/university/">Университеты</a></li>
+			<li><a href="/profession/">Профессии</a></li>
+			<li><a href="/tests/">Тесты </a></li>
+			<li><a href="">Форум</a></li>
+		</ul>
+		<ul id="nav-mobile" class="side-nav">
+			<li><a href="/university/">Университеты</a></li>
+			<li><a href="/profession/">Профессии</a></li>
+			<li><a href="/tests/">Тесты </a></li>
+			<li><a href="">Форум</a></li>
+		</ul> <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> </div>
+</nav> {% endblock %}
